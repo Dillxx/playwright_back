@@ -1,0 +1,16 @@
+2026-01-22 17:42:39 - tests.conftest - [32mINFO[0m - [conftest.py:60] - ==================================================
+2026-01-22 17:42:39 - tests.conftest - [32mINFO[0m - [conftest.py:61] - 自动化测试开始
+2026-01-22 17:42:39 - tests.conftest - [32mINFO[0m - [conftest.py:62] - ==================================================
+2026-01-22 17:42:39 - tests.conftest - [32mINFO[0m - [conftest.py:23] - 启动浏览器
+2026-01-22 17:42:41 - pages.base_page - [32mINFO[0m - [base_page.py:29] - 初始化页面: LoginPage
+2026-01-22 17:42:41 - pages.base_page - [32mINFO[0m - [base_page.py:41] - 导航到: http://dev8.kuotian.cc
+2026-01-22 17:42:43 - pages.base_page - [32mINFO[0m - [base_page.py:43] - 页面加载成功: http://dev8.kuotian.cc
+2026-01-22 17:42:43 - pages.base_page - [32mINFO[0m - [base_page.py:129] - 填充输入框: <Locator frame=<Frame name= url='http://dev8.kuotian.cc/login'> selector='internal:role=textbox[name="请输入登录账号"i]'> = 18888888888
+2026-01-22 17:42:43 - pages.base_page - [32mINFO[0m - [base_page.py:129] - 填充输入框: <Locator frame=<Frame name= url='http://dev8.kuotian.cc/login'> selector='internal:role=textbox[name="请输入登录密码"i]'> = 4444
+2026-01-22 17:42:43 - pages.base_page - [32mINFO[0m - [base_page.py:110] - 点击元素: <Locator frame=<Frame name= url='http://dev8.kuotian.cc/login'> selector='internal:role=button[name="登 录"i]'>
+2026-01-22 17:42:44 - pages.base_page - [32mINFO[0m - [base_page.py:303] - 断言文本可见: 用户或密码错误
+2026-01-22 17:42:44 - pages.base_page - [32mINFO[0m - [base_page.py:306] - 文本断言成功: 用户或密码错误
+2026-01-22 17:42:44 - tests.conftest - [32mINFO[0m - [conftest.py:30] - 关闭浏览器
+2026-01-22 17:42:44 - tests.conftest - [32mINFO[0m - [conftest.py:67] - ==================================================
+2026-01-22 17:42:44 - tests.conftest - [32mINFO[0m - [conftest.py:68] - 自动化测试结束
+2026-01-22 17:42:44 - tests.conftest - [32mINFO[0m - [conftest.py:69] - ==================================================

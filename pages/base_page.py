@@ -96,7 +96,7 @@ class BasePage:
 
     # ==================== 交互操作 ====================
 
-    # @retry(max_attempts=3, delay=0.5)   # 重试机制，暂时可不需要
+    @retry(max_attempts=3, delay=0.5)   # 重试机制，暂时可不需要
     def click(self, selector: str, timeout: int = 5000, **kwargs) -> None:
         """
         点击元素（带重试）
@@ -115,7 +115,7 @@ class BasePage:
             logger.error(f"点击失败: {selector}, 错误: {e}")
             raise
 
-    # @retry(max_attempts=3, delay=0.5)  # 重试机制，暂时可不需要
+    @retry(max_attempts=3, delay=0.5)  # 重试机制，暂时可不需要
     def fill(self, selector: str, text: str, timeout: int = 5000) -> None:
         """
         填充输入框（带重试）

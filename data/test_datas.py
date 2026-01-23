@@ -15,3 +15,9 @@ valid_login = LoginData(
     password='Hqq123456'
 )
 
+invalid_login = LoginData(
+    username='18888888888',
+    password='4444'
+)
+
+
