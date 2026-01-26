@@ -22,7 +22,7 @@ class TestBusinessPage:
         self.login_page.assert_text_visible("首页")
 
         # 方式二：调用聚合业务方法（适合集成测试）
-        self.pub_page.publish_cargo('500', '30')
+        self.pub_page.publish_cargo()
 
         # 断言结果（假设提交后会跳转或显示成功提示）
         self.pub_page.assert_text_visible("货源创建成功")
