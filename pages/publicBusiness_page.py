@@ -10,7 +10,7 @@ class BusinessPage(BasePage):
 
     """===============操作层==================="""
 
-    @property           # 使用 property 装饰器作用：调用函数 可以像 访问变量 一样。注意：调用是不能加括号
+    @property           # 使用 property 装饰器作用：调用函数 可以像 访问变量 一样。注意：调用时不能加括号。使用场景：只能在类中使用
     def get_BCenter(self):
         """获取业务中心元素"""
         return self.get_by_text(self.locator.BCenter)
@@ -94,7 +94,7 @@ class BusinessPage(BasePage):
         self.click(self.get_ShippingMType.nth(1))
         self.click(self.get_by_text(deliveryMethod2))
 
-    def fill_shipping_info(self, startTime: str, endTime: str,  goodsValue: str) -> None:
+    def fill_shipping_info(self, startTime: str, endTime: str,  goodsValue: str = None) -> None:
         """
         startTime: 装货开始时间
         endTime： 装货结束时间
@@ -104,7 +104,8 @@ class BusinessPage(BasePage):
         self.click(self.get_LoadingTime)
         self.click(self.get_by_text(startTime).nth(1))
         self.click(self.get_by_text(endTime).first)
-        self.fill(self.get_GoodsValue, goodsValue)
+        if goodsValue is not None:  # 校验是否为必填操作，其他必填项一样的操作。作用：用于兼容必填项不填的情况
+            self.fill(self.get_GoodsValue, goodsValue)
 
     def fill_address_info(self, pickingUnitContent: str, receivingUnitContent: str) -> None:
         """

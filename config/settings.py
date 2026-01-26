@@ -86,7 +86,7 @@ class LogConfig:
 
 class ServerConfig:
     """测试服务器配置"""
-    BASE_URL = os.getenv("BASE_URL", "http://dev8.kuotian.cc/login")
+    BASE_URL = os.getenv("BASE_URL", "http://dev8.kuotian.cc")
     LOGIN_URL = f"{BASE_URL}/login"
 
     @classmethod

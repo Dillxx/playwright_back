@@ -56,7 +56,11 @@ def get_logger(name: str) -> logging.Logger:
     console_handler.setFormatter(console_formatter)
 
     # 文件处理器
-    log_file = LogConfig.LOG_DIR / f"{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
+    today_date = datetime.now().strftime("%Y-%m-%d")
+    daily_dir = LogConfig.LOG_DIR / today_date
+    # 有则跳过，无则创建
+    daily_dir.mkdir(parents=True, exist_ok=True)
+    log_file = daily_dir / f"{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
     file_handler = logging.FileHandler(log_file, encoding='utf-8')
     file_handler.setLevel(LogConfig.LOG_LEVEL)
     file_formatter = logging.Formatter(
