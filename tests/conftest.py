@@ -98,12 +98,19 @@ def authenticated_context(browser_config, server_url):
 
 
 @pytest.fixture(scope="function")
-def page(authenticated_context):
+def page(authenticated_context, request):   # request 为 pytest fixture
     """使用已认证的上下文创建页面"""
+
+    # 启动录制
+    authenticated_context.tracing.start(screenshots=True, snapshots=True, sources=True)
     page = authenticated_context.new_page()
     page.set_default_timeout(BrowserConfig.TIMEOUT)
     yield page
     page.close()
+    # 停止录制, 本次未添加判断逻辑：失败才执行
+    test_name = request.node.name.replace("[", "_").replace("]", "_").replace("/", "_")
+    trace_path = os.path.join("test_results", f"trace_{test_name}_trace.zip")
+    authenticated_context.tracing.stop(path=trace_path)
 
 
 
