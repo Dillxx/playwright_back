@@ -12,6 +12,8 @@ class TestBusinessPage:
     def setup(self, page: Page):
         self.pub_page = BusinessPage(page)
 
+    @pytest.mark.business
+    @pytest.mark.p0
     def test_publish_steel_cargo(self, page: Page, server_url):
         """测试发布钢铁货源"""
 
@@ -37,6 +39,8 @@ class TestBusinessPage:
         # 断言结果（假设提交后会跳转或显示成功提示）
         self.pub_page.assert_text_visible("货物价值不能为空")
 
+    @pytest.mark.business
+    @pytest.mark.p1
     @pytest.mark.parametrize("data", get_csv_data("cargo_data.csv"))
     def test_data_driver(self, page: Page, server_url, data):
         """数据驱动/参数化：测试发布钢铁货源"""
