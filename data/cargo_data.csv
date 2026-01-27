@@ -1,0 +1,3 @@
+goodType,quantityGoods,deliveryMethod,deliveryMethod2,startTime,endTime,goodsValue,pickingUnitContent,receivingUnitContent,expected
+钢铁,500,司机,指派司机,8,22,30,静安路,祥厚路,货源创建成功
+钢铁,500,司机,指派司机,8,22,"",静安路,祥厚路,货物价值不能为空

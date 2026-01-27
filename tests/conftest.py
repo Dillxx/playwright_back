@@ -11,7 +11,10 @@ from config.settings import BrowserConfig, ServerConfig, ScreenshotConfig
 from utils.logger import get_logger
 import json
 
-STATE_FILE = Path("auth/state.json")  # 登录态存储文件
+from utils.read_login_state import get_json_state
+
+# STATE_FILE = Path("auth/state.json")  # 登录态存储文件
+STATE_FILE = get_json_state("state.json")  # 登录态存储文件
 MAX_AUTH_AGE = 72 * 3600  # 登录态有效期（秒），24小时 = 86400秒
 logger = get_logger(__name__)
 ScreenshotConfig.ensure_screenshot_dir()
@@ -33,7 +36,7 @@ def is_auth_expired() -> bool:
     返回 True = 过期或不存在，需要重新登录
     返回 False = 还在有效期内
     """
-    if not STATE_FILE.exists():
+    if not os.path.exists(STATE_FILE):
         logger.info("登录态文件不存在")
         return True
 

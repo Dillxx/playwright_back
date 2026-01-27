@@ -124,7 +124,7 @@ class BusinessPage(BasePage):
         self.click(self.get_Submit)
 
     """===============业务层==================="""
-    def publish_cargo(self, goodType="钢铁",  quantityGoods="500",  deliveryMethod="司机",  deliveryMethod2="指派司机",  startTime="8",  endTime="22",  pickingUnitContent="静安路",  receivingUnitContent="祥厚路", goodsValue="30") -> None:
+    def publish_cargo(self, goodType="钢铁",  quantityGoods="500",  deliveryMethod="司机",  deliveryMethod2="指派司机",  startTime="8",  endTime="22", goodsValue="30",  pickingUnitContent="静安路",  receivingUnitContent="祥厚路") -> None:
         """完整的发布货源流程"""
         self.navigate_to_publish_page()
         self.fill_cargo_basic_info(goodType, quantityGoods, deliveryMethod, deliveryMethod2)
